@@ -1,4 +1,4 @@
-import 'package:squirrel_pot/src/model/file.dart';
+import 'package:squirrel_pot/src/model/file_model.dart';
 import 'package:squirrel_pot/src/model/storage_space.dart';
 
 ///
