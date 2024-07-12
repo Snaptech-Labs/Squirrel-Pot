@@ -4,7 +4,7 @@ version: 1.0.0
 repository: https://github.com/Snaptech-Labs/Squirrel-Pot
 
 environment:
-  sdk: ^3.5.0-323.0.dev
+  sdk: ^3.4.3
 
 # Add regular dependencies here.
 dependencies:
