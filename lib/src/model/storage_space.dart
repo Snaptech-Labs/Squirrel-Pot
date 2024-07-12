@@ -6,8 +6,11 @@ class StorageSpace {
 
   @override
   bool operator ==(covariant StorageSpace other) {
-    return this.id == other.id;
+    return id == other.id;
   }
+
+  @override
+  int get hashCode => id.hashCode ^ freeSpace.hashCode;
 
   @override
   String toString() {

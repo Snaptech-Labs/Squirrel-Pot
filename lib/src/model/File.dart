@@ -6,8 +6,11 @@ class File {
 
   @override
   bool operator ==(covariant File other) {
-    return this.id == other.id;
+    return id == other.id;
   }
+
+  @override
+  int get hashCode => id.hashCode ^ size.hashCode;
 
   @override
   String toString() {

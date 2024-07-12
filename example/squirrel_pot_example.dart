@@ -1,30 +1,30 @@
 import 'package:squirrel_pot/squirrel_pot.dart';
-import 'package:squirrel_pot/src/model/File.dart';
-import 'package:squirrel_pot/src/model/FileStorageMap.dart';
-import 'package:squirrel_pot/src/model/StorageSpace.dart';
+import 'package:squirrel_pot/src/model/file.dart';
+import 'package:squirrel_pot/src/model/file_storage_map.dart';
+import 'package:squirrel_pot/src/model/storage_space.dart';
 
 void main() {
-  StorageSpace storageA = new StorageSpace(id: 'drive', freeSpace: 1000);
-  StorageSpace storageB = new StorageSpace(id: 'onedrive', freeSpace: 500);
-  StorageSpace storageC = new StorageSpace(id: 'dropbox', freeSpace: 300);
+  StorageSpace storageA = StorageSpace(id: 'drive', freeSpace: 1000);
+  StorageSpace storageB = StorageSpace(id: 'onedrive', freeSpace: 500);
+  StorageSpace storageC = StorageSpace(id: 'dropbox', freeSpace: 300);
 
-  File fileA = new File(id: 'xxc112', size: 500);
-  File fileB = new File(id: 'xxc113', size: 500);
-  File fileC = new File(id: 'xxc114', size: 500);
-  File fileD = new File(id: 'xxc115', size: 250);
+  File fileA = File(id: 'xxc112', size: 500);
+  File fileB = File(id: 'xxc113', size: 500);
+  File fileC = File(id: 'xxc114', size: 500);
+  File fileD = File(id: 'xxc115', size: 250);
 
   List<StorageSpace> storageSpaces =
       List.of(<StorageSpace>[storageA, storageB, storageC]);
   List<File> files = List.of(<File>[fileA, fileB, fileC, fileD]);
 
-  StorageOptimiserCore storageOptimiserCore = new StorageOptimiserCore();
+  StorageOptimiserCore storageOptimiserCore = StorageOptimiserCore();
 
-  Stopwatch stopwatch = new Stopwatch()..start();
+  Stopwatch stopwatch = Stopwatch()..start();
   FileStorageMap result =
       storageOptimiserCore.distributeFiles(storageSpaces, files);
   print(
       'Distribute file function executed in : ${stopwatch.elapsed} for '
-      +'${files.length} files and ${storageSpaces.length} storage space');
+      '${files.length} files and ${storageSpaces.length} storage space');
   stopwatch.stop();
   
   print(result);

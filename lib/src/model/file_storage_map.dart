@@ -1,11 +1,11 @@
-import 'package:squirrel_pot/src/model/File.dart';
-import 'package:squirrel_pot/src/model/StorageSpace.dart';
+import 'package:squirrel_pot/src/model/file.dart';
+import 'package:squirrel_pot/src/model/storage_space.dart';
 
-/**
- * This is a wrapper class for Map<File, StorageSpace>
- */
+///
+/// This is a wrapper class for Map<File, StorageSpace>
+///
 class FileStorageMap implements Map<File, StorageSpace> {
-  Map<File, StorageSpace> _fileStorageInnerMap;
+  final Map<File, StorageSpace> _fileStorageInnerMap;
 
   FileStorageMap() : _fileStorageInnerMap = {};
 
